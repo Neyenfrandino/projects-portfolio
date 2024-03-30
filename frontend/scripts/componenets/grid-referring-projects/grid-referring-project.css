@@ -1,0 +1,79 @@
+.container-grid-referring-project {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    grid-template-rows: repeat(3, 1fr); /* 3 filas de igual tamaño */
+    gap: 10px; /* Espacio entre las columnas */
+    height: 80vh; /* Toma el 100% de la altura de la ventana */
+    width: 80%;
+    margin: 30px; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    animation: slideInGrid 1.5s ease forwards; /* Aplica la animación al mostrar el contenedor */
+  
+}
+
+@keyframes slideInGrid {
+    from {
+        transform: translateY(-100%); /* Empieza desde arriba de la ventana */
+    }
+    to {
+        transform: translateY(0); /* Se desplaza hacia abajo */
+    }
+}
+
+.container-grid-referring-project div {
+    background-color: none; /* Color de fondo para visualizar las columnas */
+    padding: 10px; /* Espaciado interior */
+    text-align: center; /* Centrar el contenido */
+    border: solid 1px;
+    border-radius: 5px; /* Borde redondeado */
+    background-color: rgba(55, 58, 58, 0.5); /* Color de fondo con transparencia */
+    backdrop-filter: blur(50px); /* Desenfoque del fondo */
+}
+
+.first-div,
+.second-div {
+    grid-row: span 2; /* Ocupa dos filas */
+}
+
+.third-div {
+    grid-row: span 3; /* Ocupa tres filas */
+}
+
+.fourth-div {
+    grid-row: span 2; /* Ocupa dos filas */
+}
+
+.fifth-div {
+    grid-column: span 1; /* Ahora ocupa una columna */
+    height: 200px; /* Ajusta la altura según lo necesites */
+}
+
+.first-div,
+.second-div,
+.seventh-div,
+.eighth-div,
+.ninth-div,
+.tenth-div {
+    height: 100px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Escalar la imagen para que llene la caja manteniendo su relación de aspecto */
+}
+
+.bg-darka{
+    --bs-bg-opacity: 0.5;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
