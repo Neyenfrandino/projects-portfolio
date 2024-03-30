@@ -1,53 +1,147 @@
-import modalInfoProject from "../modal/modal.js";
+const gridEffectChangeImage = async () => {
+    const response = await fetch('/frontend/images.json')
+    if (response.ok) {
+        const data = await response.json();
+        const querySelectorAllGrid = document.querySelectorAll('.container-grid-referring-project div')
+        let availableGrids = Array.from(querySelectorAllGrid); // Convertir NodeList a un array
 
-const gridEffectChangeImage = () => {
-    const images = [
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/1.png",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/2.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/3.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/4.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/5.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/6.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/7.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/8.jpg",
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/9.jpg",        
-        "/scripts/componenets/grid-referring-projects/img-projects-referent/10.jpg",        
-    ];
-    
-    const querySelectorAllGrid = document.querySelectorAll('.container-grid-referring-project div')
+        data.forEach((elemet)  => {
+            const { url, title, contextInfo, redirectHrefProjectGitHub } = elemet
+            // console.log(url)
+            if (availableGrids.length === 0) return; // Si no quedan contenedores disponibles, salir del bucle
 
-    let availableGrids = Array.from(querySelectorAllGrid); // Convertir NodeList a un array
-    images.forEach(imgUrl => {
-    if (availableGrids.length === 0) return; // Si no quedan contenedores disponibles, salir del bucle
-    const randomIndex = Math.floor(Math.random() * availableGrids.length);
-    const randomElement = availableGrids[randomIndex];
-    availableGrids.splice(randomIndex, 1); // Eliminar el contenedor seleccionado de la lista
+            const randomIndex = Math.floor(Math.random() * availableGrids.length);
+            const randomElement = availableGrids[randomIndex];
+            availableGrids.splice(randomIndex, 1); // Eliminar el contenedor seleccionado de la lista
 
-    const elementImgGrid = document.createElement('img');
-    elementImgGrid.src = imgUrl; // Establecer el src de la imagen
-    elementImgGrid.alt = "Random Image"; 
-    
-    randomElement.appendChild(elementImgGrid);
-    })
-    
-    for ( let i of querySelectorAllGrid){
-    
-        i.addEventListener('mouseenter', () => {
-            i.style.transition = 'transform 0.5s';
-            i.style.transform = 'scale(1.3)'; // Aumenta el tamaño al 110%
-            i.style.zIndex = '1'; // Establece el z-index para colocar el elemento delante de los otros
+            const elementImgGrid = document.createElement('img');
+            elementImgGrid.src = url; // Establecer el src de la imagen
+            elementImgGrid.alt = "Random Image";
+
+            const containerDivModalInfo = document.createElement('section');
+            containerDivModalInfo.className = 'containerDivModalInfo'
+
+            const elementSpan = document.createElement('apan');
+            elementSpan.textContent = title
+
+            const buttonModalInfo = document.createElement('button')
+            buttonModalInfo.className = 'buttonModalInfo'
+            buttonModalInfo.innerHTML = '&#9650'; 
+          
+            containerDivModalInfo.appendChild(buttonModalInfo)
+            containerDivModalInfo.appendChild(elementSpan)
+            randomElement.appendChild(elementImgGrid);
+            randomElement.appendChild(containerDivModalInfo);
+
+            modalExpand(buttonModalInfo, title, contextInfo, redirectHrefProjectGitHub)
+
         })
-        i.addEventListener('mouseleave', () => {
-            i.style.transition = 'transform 0.5s';
+        
+        for ( let i of querySelectorAllGrid){
+        
+            i.addEventListener('mouseenter', () => {
 
-            i.style.transform = 'scale(1)'; // Restaura el tamaño original
-            i.style.zIndex = '0'
-          });
+                i.style.transition = 'transform 0.5s';
+                i.style.transform = 'scale(1.3)'; // Aumenta el tamaño al 110%
+                i.style.zIndex = '1'; // Establece el z-index para colocar el elemento delante de los otros
+            })
+            i.addEventListener('mouseleave', () => {
+                i.style.transition = 'transform 0.5s';
+                i.style.transform = 'scale(1)'; // Restaura el tamaño original
+                i.style.zIndex = '0'
+            });
+        }
+    } else {
+        console.error('Failed to fetch images.json');
     }
 }
+
+
+const modalExpand = (buttonModalInfo, title, contextInfo, redirectHrefProjectGitHub) => {
+    const modal = document.getElementById('myModal');
+    const content = document.getElementById('content');
+
+    buttonModalInfo.addEventListener('click', () => {
+        modal.style.display = 'flex'; // Mostrar el modal al hacer clic en el botón
+        modal.classList.add('active');
+
+        const elementTitle = document.createElement('h3');
+        elementTitle.className = 'elementTitle'
+        elementTitle.textContent = title; // Asignar el contenido del título al elemento h3
+
+        const elementSpan =  document.createElement('p')
+        elementSpan.className = 'elementSpan'
+        elementSpan.textContent = contextInfo
+
+        content.appendChild(elementTitle); // Agregar el elemento h3 al contenido del modal
+        content.appendChild(elementSpan)
+
+        elemntosNavLinkPojects(content, redirectHrefProjectGitHub)
+    });
+
+    // Función para cerrar el modal al hacer clic fuera de él
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            // Eliminar todos los elementos secundarios del modal
+            while (content.firstChild) {
+                content.removeChild(content.firstChild);
+            }
+
+            modal.classList.remove('active');
+            modal.style.display = 'none'; // Ocultar el modal al hacer clic fuera de él
+        }
+    });
+}
+
+
+const elemntosNavLinkPojects = (content, redirectHrefProjectGitHub) => {
+
+    const redirectCvReferece = document.createElement('div')
+    redirectCvReferece.className = 'redirect-cv-referece social-icons'
+
+    const persuadeTheRecruiterSpan = document.createElement('span')
+    persuadeTheRecruiterSpan.className = 'persuadeTheRecruiterSpan'
+    persuadeTheRecruiterSpan.textContent = 'You can see the repository on git hub or see my profile on linkeding...'
+
+    const ancordLinlkHrefGitHub = document.createElement('a')
+    ancordLinlkHrefGitHub.target = '_blank'
+    ancordLinlkHrefGitHub.href = redirectHrefProjectGitHub
+    const iconGitHub = document.createElement('i');
+    iconGitHub.className = 'fab fa-github';
+
+    const ancordLinlkHrefLinkeding = document.createElement('a')
+    
+    ancordLinlkHrefLinkeding.target = '_blank'
+    ancordLinlkHrefLinkeding.href = 'https://www.linkedin.com/in/neyen-frandino/'
+    const iconLinkedin = document.createElement('i');
+    iconLinkedin.className = 'fab fa-linkedin';
+
+    ancordLinlkHrefGitHub.appendChild(iconGitHub)
+    ancordLinlkHrefLinkeding.appendChild(iconLinkedin)
+
+    redirectCvReferece.appendChild(ancordLinlkHrefGitHub)
+    redirectCvReferece.appendChild(ancordLinlkHrefLinkeding)
+
+    content.appendChild(persuadeTheRecruiterSpan)
+    content.appendChild(redirectCvReferece)
+
+}
+const buttonReferringProjects = (URL, id) => {
+    const buttonPagReferentProyect = document.getElementById(`${id}`);
+    buttonPagReferentProyect.classList.add("slide-down");
+    buttonPagReferentProyect.addEventListener('click', async () => {
+       
+
+        // Espera un tiempo para cargar la página
+        setTimeout(function () {
+            // Cambia la ubicación actual por la nueva página
+            window.location.href = URL;
+        }, 500); // Tiempo de duración de la animación (0.5 segundos en este caso)
+
+    });
+};
+
+buttonReferringProjects('http://127.0.0.1:5500/frontend/scripts/componenets/contacts/contacts.html', 'button-next-contacts');
+
+
 gridEffectChangeImage()
-
-
-
-export default gridEffectChangeImage
-

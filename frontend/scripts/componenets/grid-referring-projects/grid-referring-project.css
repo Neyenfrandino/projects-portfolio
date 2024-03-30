@@ -10,15 +10,25 @@
     animation: slideInGrid 1.5s ease forwards; /* Aplica la animación al mostrar el contenedor */
   
 }
+/* 
+@keyframes slideInGrid {
+    from {
+     
+    }
+    to {
+        transform: translateY(0); 
+    }
+} */
 
 @keyframes slideInGrid {
     from {
-        transform: translateY(-100%); /* Empieza desde arriba de la ventana */
+        transform: translateX(-100%); /* Empieza desde la izquierda de la ventana */
     }
     to {
-        transform: translateY(0); /* Se desplaza hacia abajo */
+        transform: translateX(0); /* Se desplaza hacia la derecha */
     }
 }
+
 
 .container-grid-referring-project div {
     background-color: none; /* Color de fondo para visualizar las columnas */
@@ -76,4 +86,166 @@
     --bs-bg-opacity: 0.5;
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
+
+.containerDivModalInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Cambiado de 50% a 0 */
+    width: 100%; /* Nuevo */
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    color: white;
+    padding: 5px 10px;
+    /* border-radius: 5px; */
+    border: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    /* box-sizing: border-box; Nuevo */
+}
+
+
+.containerDivModalInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+    box-sizing: border-box;
+}
+
+.containerDivModalInfo:hover {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.buttonModalInfo {
+    position: absolute;
+    top: -15px; /* Ajusta la posición de la flecha arriba del texto */
+    left: 50%; /* Centra la flecha horizontalmente */
+    transform: translateX(-50%); /* Centra la flecha horizontalmente */
+    background-color: transparent;
+    color: #00aeff;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Agrega transiciones para color y transform */
+}
+
+.buttonModalInfo:hover {
+    color: #6c7a89;
+    transform: translate(-50%, -5px); /* Mueve la flecha hacia arriba al hacer hover */
+}   
+
+/* Definir la animación */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar la animación al modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    transition: opacity 0.5s ease; /* Transición para la opacidad */
+}
+
+.modal.active {
+    display: flex; /* Mostrar el modal cuando tiene la clase active */
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    width: 95%; /* Ancho del modal */
+    height: 95%;
+    max-width: 80%; /* Máximo ancho del modal */
+    max-height: 80%;
+    overflow: auto;
+    position: relative;
+    z-index: 10000;
+    transform: translateY(-100%); /* Inicialmente fuera de la pantalla */
+    opacity: 0; /* Inicialmente ocultar el modal */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición para la transformación y la opacidad */
+    animation: slideInFromTop 1s forwards; /* Aplicar la animación al mostrar el modal */
+}
+
+.modal.active .content {
+    transform: translateY(0); /* Mostrar el modal moviéndolo desde arriba */
+    opacity: 1; /* Mostrar el modal con opacidad completa */
+}
+
+
+
+.elementTitle{
+    text-align: center;
+    color:rgba(0, 161, 167, 0.9);
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+.elementSpan {
+    display: block;
+    color: aliceblue;
+    text-align: center; /* Centrar el texto horizontalmente */
+    max-width: 100%; /* Establecer un ancho máximo para el span */
+    overflow: hidden; /* Ocultar el texto que sobresale del contenedor */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinear los elementos al borde inferior */
+    position: absolute; /* Posicionamiento absoluto para colocarlos en el borde inferior */
+    bottom: 10%; /* Colocar en el borde inferior */
+   
+}
+
+.persuadeTheRecruiterSpan {
+    color:rgba(0, 161, 167, 0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinear los elementos al borde inferior */
+    position: absolute; /* Posicionamiento absoluto para colocarlos en el borde inferior */
+    bottom: 22%; /* Colocar en el borde inferior */
+}
+
+.button-containerr {
+    position: fixed;
+    bottom: -5px; /* Distancia desde el borde inferior */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-100%);
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-10000%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.slide-down {
+    animation: slide-down 2s ease;
+}
+
 

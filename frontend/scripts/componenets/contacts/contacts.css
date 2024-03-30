@@ -1,0 +1,164 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../../../img/library-8604834_1280.jpg);
+    background-size: cover; /* Cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    font-family: "Edu NSW ACT Foundation", cursive !important;
+} 
+
+
+.bg-darka{
+    --bs-bg-opacity: 0.5;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+
+.container-contacts {
+    width: 60%;
+    margin: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px;
+    height: calc(100% - 15%); /* Resta 20px para dejar espacio en la parte superior */
+    position: fixed;
+    bottom: 0; /* Alineado con la parte inferior de la página */
+    animation: slideUpContacts 1s ease; /* Animación de abajo hacia arriba */
+}
+@keyframes slideDownImg {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.container-img {
+    width: 200px;
+    height: 200px;
+    border: solid 1px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transition: box-shadow 0.3s ease; /* Transición suave para el efecto de hover */
+    animation: slideDownImg 1s ease; /* Animación de arriba hacia abajo */
+}
+
+.container-img:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Nuevo efecto de sombra al hacer hover */
+}
+
+.img-contacts {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+.img-contacts:hover {
+    transform: scale(1.05); /* Escalar ligeramente la imagen al hacer hover */
+}
+
+
+
+.container-icon-contacts {
+    display: flex;
+    justify-content: center; /* Centrar los íconos horizontalmente */
+    align-items: flex-start; /* Alinear los íconos arriba */
+    height: 100vh; /* Altura del contenedor principal (en este caso, toda la altura de la ventana) */
+    margin-top: 100px; /* Margen arriba para mover los íconos más abajo */
+}
+
+.container-icon-contacts i {
+    font-size: 40px; /* Tamaño de los íconos */
+    margin: 0 30px; /* Espacio entre los íconos */
+    opacity: 0; /* Inicialmente, los íconos están ocultos */
+    transform: translateY(50%); /* Desplazar los íconos hacia arriba */
+    transition: opacity 0.5s, transform 0.5s; /* Transición suave para la propiedad de opacidad y transformación */
+}
+
+.container-icon-contacts i:nth-child(1) {
+    animation: showIcon 0.5s forwards 0s; /* Primer ícono */
+}
+
+.container-icon-contacts i:nth-child(2) {
+    animation: showIcon 0.5s forwards 0.5s; /* Segundo ícono con un retraso de 0.5s */
+}
+
+.container-icon-contacts i:nth-child(3) {
+    animation: showIcon 0.5s forwards 1s; /* Tercer ícono con un retraso de 1s */
+}
+
+.container-icon-contacts i:nth-child(4) {
+    animation: showIcon 0.5s forwards 1.5s; /* Cuarto ícono con un retraso de 1.5s */
+}
+
+.container-icon-contacts i:nth-child(5) {
+    animation: showIcon 0.5s forwards 2s; /* Quinto ícono con un retraso de 2s */
+}
+
+@keyframes showIcon {
+    to {
+        opacity: 1; /* Ícono completamente visible */
+        transform: translateY(0); /* Sin desplazamiento */
+    }
+}
+
+.hover-effect {
+    color: rgba(0, 161, 167, 0.9);
+    margin: 10px;
+    font-size: 30px; /* Ajustar el tamaño de la fuente */
+    transition: color 0.3s, transform 0.3s !important; /* Transición suave de color y transformación */
+}
+
+.hover-effect:hover {
+    color: rgba(255, 255, 255, 0.7); /* Cambio de color al pasar el cursor */
+    transform: scale(1.2) rotate(5deg) !important; /* Aumentar ligeramente el tamaño y rotar 10 grados */
+}
+
+
+.container-text {
+    text-align: center; /* Centrar el contenido */
+    margin-top: 50px; /* Espacio arriba */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(50px); /* Desplazado hacia abajo */
+    animation: slideUp 1s forwards; /* Animación de abajo hacia arriba */
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1; /* Hacer visible */
+        transform: translateY(0); /* Sin desplazamiento */
+    }
+}
+
+.title-contactMe {
+    font-size: 24px; /* Tamaño de la fuente */
+    color: rgba(255, 255, 255, 0.7); /* Color del texto */
+}
+
+.span-contactMe {
+    font-size: 16px; /* Tamaño de la fuente */
+    color: rgba(255, 255, 255, 0.7); /* Color del texto */
+    margin-top: 20px; /* Espacio arriba */
+}
