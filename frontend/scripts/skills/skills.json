@@ -1,0 +1,47 @@
+{
+    "skills": [
+        {
+            "name": "JavaScript",
+            "icono": "https://img.icons8.com/color/48/javascript--v1.png",
+            "image": "/frontend/img/UC-9ebc29ce-cb96-4149-9921-3331fe729f48.jpg",
+            "courseContext": "Developing websites from scratch with JavaScript. Mastering the fundamentals of HTML & CSS to interact with JavaScript. Creating dynamic and interactive websites. Programming from basics to servers, security, and databases. Being a flexible programmer, prepared for entertainment, administrative, operational, and network sites. Mastering advanced aspects such as prototypes, inheritance, and asynchronous programming. Applying object-oriented programming in your projects. Using Webpack to manage and optimize your development resources. Focusing on security in web development, implementing best practices to protect your applications and data. Making API calls with Fetch and Axios."
+        },
+        {
+            "name": "Python",
+            "icono": "https://img.icons8.com/color/48/python--v1.png",
+            "image": "/frontend/img/UC-442ef534-e8b1-4dd9-8770-c67cf60904d4.jpg",
+            "courseContext": "In this Python course, I acquired skills to program professionally. I developed solid and advanced programs, working on real-world projects every day. Each section concluded with a project, allowing me to immediately apply what I learned. I used Python in a variety of applications, from games to artificial intelligence, machine learning, data science, and administrative management. I also delved into Object-Oriented Programming (OOP) and learned to understand complex concepts clearly."  
+        },
+        {
+            "name": "FastAPI",
+            "icono": "fa-network-wired",
+            "image": "/frontend/img/UC-1129edb0-5996-4d5f-b281-c88b22ca246e.jpg",
+            "courseContext": "SQLAlchemy with FastAPI, Using Alembic for database migrations, Creating models in Python, Building APIs, Generating JWT, Protecting APIs, Authentication, Testing, Deploying to Heroku, Creating databases in Heroku, Connecting FastAPI and Flask using Docker-compose, Docker in FastAPI."   
+        },
+        {
+            "name": "PostgreSQL",
+            "icono": "https://img.icons8.com/color/48/postgreesql.png",
+            "image": "",
+            "courseContext": ""   
+        },
+        {
+            "name": "CSS",
+            "icono": "https://img.icons8.com/color/48/css3.png",
+            "image": "",
+            "courseContext": ""   
+        },
+        {
+            "name": "HTML",
+            "icono": "https://img.icons8.com/color/48/html-5--v1.png",
+            "image": "",
+            "courseContext": ""   
+        },
+        {
+            "name": "React",
+            "icono": "https://img.icons8.com/color/48/react-native.png",
+            "image": "",
+            "courseContext": "Build enterprise-level React applications and deploy them to production (using React 18!). Learn to build reactive, performant, large-scale applications like a senior developer. Master the latest features in React including Hooks, Context API, Suspense, React Lazy + more. Become the top 10% ReactJS Developer. Using GraphQL as a React Developer. Use Redux, Redux Thunk, and Redux Saga in your applications. Learn to compare tradeoffs when it comes to different state management approaches. Set up authentication and user accounts. Use Firebase to build full-stack applications. Learn to lead React projects by making good architecture decisions and helping others on your team. Master React Design Patterns. Learn CSS in JS with styled-components. Routing with React Router. Convert apps to Progressive Web Apps. Testing your application with Jest, Enzyme, and snapshot testing. Handling online payments with Stripe API. Using the latest ES6/ES7/ES8/ES9/ES10/ES11 JavaScript features to write clean code."
+        }
+    ]
+}
+

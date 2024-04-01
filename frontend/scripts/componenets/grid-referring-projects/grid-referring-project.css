@@ -181,17 +181,11 @@
     overflow: auto;
     position: relative;
     z-index: 10000;
-    transform: translateY(-100%); /* Inicialmente fuera de la pantalla */
-    opacity: 0; /* Inicialmente ocultar el modal */
+    transform: translateY(0); /* Inicialmente fuera de la pantalla */
+    opacity: 1; /* Inicialmente ocultar el modal */
     transition: transform 0.3s ease, opacity 0.3s ease; /* Transición para la transformación y la opacidad */
     animation: slideInFromTop 1s forwards; /* Aplicar la animación al mostrar el modal */
 }
-
-.modal.active .content {
-    transform: translateY(0); /* Mostrar el modal moviéndolo desde arriba */
-    opacity: 1; /* Mostrar el modal con opacidad completa */
-}
-
 
 
 .elementTitle{

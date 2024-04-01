@@ -151,3 +151,21 @@ to {
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 
+
+.container-logo-personal {
+    position: fixed;
+    bottom: -40px;
+    left: 0;
+    padding: 20px;
+    padding-bottom: 0; /* Aumentar el espacio inferior */
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    z-index: 1000;
+}
+
+.logo-img-personal {
+    max-width: 200px;
+    height: auto;
+}

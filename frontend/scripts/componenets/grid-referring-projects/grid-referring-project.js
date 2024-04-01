@@ -33,6 +33,7 @@ const gridEffectChangeImage = async () => {
             randomElement.appendChild(elementImgGrid);
             randomElement.appendChild(containerDivModalInfo);
 
+            
             modalExpand(buttonModalInfo, title, contextInfo, redirectHrefProjectGitHub)
 
         })
@@ -61,10 +62,14 @@ const modalExpand = (buttonModalInfo, title, contextInfo, redirectHrefProjectGit
     const modal = document.getElementById('myModal');
     const content = document.getElementById('content');
 
+
     buttonModalInfo.addEventListener('click', () => {
+
+        
         modal.style.display = 'flex'; // Mostrar el modal al hacer clic en el botón
         modal.classList.add('active');
-
+        console.log(modal)
+        console.log(content)
         const elementTitle = document.createElement('h3');
         elementTitle.className = 'elementTitle'
         elementTitle.textContent = title; // Asignar el contenido del título al elemento h3

@@ -1,0 +1,198 @@
+body {
+    background-image: url(../../img/library-8604834_1280.jpg);
+    background-size: cover; /* Cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    font-family: "Edu NSW ACT Foundation", cursive !important;
+
+} 
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-darka{
+    --bs-bg-opacity: 0.5;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+
+.cointainerGridSkills {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 20%; /* Mover el contenedor hacia abajo */
+
+}
+
+
+.containerIcono {
+    display: flex;
+    font-size: 50px;
+    color: #007dd6;
+    /* border: 1px solid #ccc;  */
+    padding: 20px;
+    margin: 20px;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    transition: transform 0.3s ease; /* Transición suave para el efecto de transformación */
+    /* margin-top: 200%; */
+    cursor: pointer;
+}
+
+.iconoFastApi{
+    transition: transform 0.5s ease; /* Transición suave para el efecto de transformación */
+
+}
+
+.iconoFastApi:hover {
+    transform: scale(1.1) rotate(10deg); /* Escalado y rotación al hacer hover */
+}
+
+.imgSkills {
+    height: 60px;
+    width: 60px;
+    transition: transform 0.5s ease; /* Transición suave para el efecto de transformación */
+}
+
+.imgSkills:hover{
+    transform: scale(1.1) rotate(10deg); /* Escalado y rotación al hacer hover */
+}
+
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.containerIcono:nth-child(1) {
+    animation-name: fadeInFromLeft;
+    
+}
+
+.containerIcono:nth-child(2) {
+    animation-name: fadeInFromRight;
+}
+
+.containerIcono:nth-child(3) {
+    animation-name: fadeInFromTop;
+}
+
+.containerIcono:nth-child(4) {
+    animation-name: fadeInFromBottom;
+}
+
+.containerIcono:nth-child(5) {
+    animation-name: fadeInFromLeft;
+}
+
+.containerIcono:nth-child(6) {
+    animation-name: fadeInFromRight;
+}
+
+.containerIcono:nth-child(7) {
+    animation-name: fadeInFromTop;
+}
+
+.containerIcono:nth-child(8) {
+    animation-name: fadeInFromBottom;
+}
+
+.containerIcono:nth-child(9) {
+    animation-name: fadeInFromLeft;
+}
+
+
+
+
+
+/* Definir la animación */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar la animación al modal */
+.modal1 {
+    display: none; /* Ocultar el modal por defecto */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    transition: opacity 0.5s ease; /* Transición para la opacidad */
+}
+
+.modal1.active {
+    display: flex; /* Mostrar el modal cuando tiene la clase active */
+}
+
+.content1 {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    width: 95%; /* Ancho del modal */
+    height: 95%;
+    max-width: 80%; /* Máximo ancho del modal */
+    max-height: 80%;
+    overflow: auto;
+    position: relative;
+    z-index: 10000;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición para la transformación y la opacidad */
+    animation: slideInFromTop 1s forwards; /* Aplicar la animación al mostrar el modal */
+}
+
+
+
+
