@@ -1,3 +1,5 @@
+import { previewMenu } from "../../index/app.js";
+
 const gridSkills = async () => {
     const response = await fetch('/frontend/scripts/skills/skills.json');
     const data = await response.json(); // Parseamos la respuesta a JSON
@@ -6,11 +8,10 @@ const gridSkills = async () => {
         throw new Error("Failed to load JSON file data");
     }
    
-    const { skills, image, courseContext } = data;
+    const { skills } = data;
     
-    
-
-    for (let i of skills) {
+    skills.forEach(i => {
+        
         const elementContainerGridSkills = document.getElementById('cointainerSkills');
         const containerIcono = document.createElement('div');
         containerIcono.className = 'containerIcono'
@@ -30,42 +31,74 @@ const gridSkills = async () => {
        
         containerIcono.appendChild(img);
         elementContainerGridSkills.appendChild(containerIcono);
-    }
+    })
 }
 
 const modalExpand = (container, i) => {
     const modal = document.getElementById('myModal1');
     const content = document.getElementById('content1');
-    const containerImgSkillsModal = document.querySelector('.containerImgSkillsModal')
-    const imgSkillsContainer = document.querySelector('.imgSkillsContainer')
-    const containerSpanModal = document.querySelector('.containerSpanModal')
 
-    const { name, icono, image, courseContext} = i
     
     container.addEventListener('click', () => {
+        const containerImgSkillsModal = document.createElement('div')
+        containerImgSkillsModal.className = 'containerImgSkillsModal'
+
+        const containerSpanModal = document.createElement('div')
+        containerSpanModal.className = 'containerSpanModal'
+
+        const imgSkillsContainer = document.createElement('div')
+        imgSkillsContainer.className = 'imgSkillsContainer'
+
+        const titleModalSkills = document.createElement('div')
+        titleModalSkills.className =  'titleModalSkills'
+       
+
+        const { name, icono, image, courseContext} = i
 
         modal.style.display = 'flex'; // Mostrar el modal al hacer clic en el botón
         modal.classList.add('active');
-
+        
         const imgModal = document.createElement('img')
-        const spanModal = document.querySelector('.spanModal')
+        const spanModal = document.createElement('span')
         const imgSkills = document.createElement('img')
+        const titleSkills = document.createElement('h3')
 
         if(name == 'FastAPI'){
-            
+            const constainerIcono = document.createElement('div')
+            constainerIcono.className = 'constainerIcono'
+
             const elementI = document.createElement('i')
             elementI.className = `fas fa-network-wired iconoFastApi`
+
+            titleSkills.textContent = 'Course content'
 
             spanModal.textContent = courseContext
             spanModal.className = 'spanModal'
 
-            content.appendChild(elementI)
-            modal.appendChild(content)
 
-        }else{ 
             imgModal.src = image;
             imgModal.className = 'imgModal'
 
+            containerImgSkillsModal.appendChild(imgModal)
+            content.appendChild(containerImgSkillsModal)
+
+            titleModalSkills.appendChild(titleSkills)
+            content.appendChild(titleModalSkills)
+
+         
+            containerSpanModal.appendChild(spanModal)
+            content.appendChild(containerSpanModal)
+
+            constainerIcono.appendChild(elementI)
+
+            content.appendChild(constainerIcono)
+            modal.appendChild(content)
+
+        }else{ 
+            titleSkills.textContent = 'Course content'
+            
+            imgModal.src = image;
+            imgModal.className = 'imgModal'
 
             imgSkills.src = icono
             imgSkills.className = 'imgSkills'
@@ -73,10 +106,11 @@ const modalExpand = (container, i) => {
             spanModal.textContent = courseContext
             spanModal.className = 'spanModal'
 
-            
+            titleModalSkills.appendChild(titleSkills)
+            content.appendChild(titleModalSkills)
 
             containerSpanModal.appendChild(spanModal)
-            content.appendChild(imgSkillsContainer)
+            content.appendChild(containerSpanModal)
 
             imgSkillsContainer.appendChild(imgSkills)
             content.appendChild(imgSkillsContainer)
@@ -84,27 +118,31 @@ const modalExpand = (container, i) => {
             containerImgSkillsModal.appendChild(imgModal)
             content.appendChild(containerImgSkillsModal)
 
+
             modal.appendChild(content)
+
         }
 
     });
 
     // Función para cerrar el modal al hacer clic fuera de él
     modal.addEventListener('click', (event) => {
-        console.log(modal.firstChild, 'jaja')
-        console.log(event.target)
+        
         if (event.target === modal) {
-            // Eliminar todos los elementos secundarios del modal
+          
             while (content.firstChild) {
                 content.removeChild(content.firstChild);
             }
-
+     
             modal.classList.remove('active');
             modal.style.display = 'none'; // Ocultar el modal al hacer clic fuera de él
         }
     });
+    
 }
 
-gridSkills();
+const url = 'http://127.0.0.1:5500/frontend/scripts/skills/skills.html'
+previewMenu(url, 'skills')
 
+gridSkills();
 

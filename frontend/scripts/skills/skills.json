@@ -22,19 +22,19 @@
             "name": "PostgreSQL",
             "icono": "https://img.icons8.com/color/48/postgreesql.png",
             "image": "",
-            "courseContext": ""   
+            "courseContext": "In a year and a half, I have developed strong skills in PostgreSQL. I can design and create relational databases, write complex queries using SQL, and manage database interactions in applications. I have also learned about database normalization, indexing, and performance optimization. While I am continuing to expand my knowledge, I am eager to continue learning and applying PostgreSQL in practical projects."   
         },
         {
             "name": "CSS",
             "icono": "https://img.icons8.com/color/48/css3.png",
             "image": "",
-            "courseContext": ""   
+            "courseContext": "In a year and a half, I have developed strong skills in CSS. I can effectively style web pages using properties like color, font size, margin, and padding. Additionally, I have learned to use flexbox and grid to design modern and responsive layouts. I also have experience in responsive web design to ensure that sites look good on different devices. Although I am still in the learning process, I am excited to continue improving my CSS skills and learn new techniques to enhance my web design abilities."   
         },
         {
             "name": "HTML",
             "icono": "https://img.icons8.com/color/48/html-5--v1.png",
             "image": "",
-            "courseContext": ""   
+            "courseContext": "In the past year, I have significantly advanced my skills in HTML, enhancing my ability to structure documents semantically with elements like <header>, <nav>, <main>, <section>, and <footer>. I have also strengthened my knowledge of essential tags such as <h1> to <h6>, <p>, <a>, <img>, <ul>, <ol>, and <table>, and I have learned to create effective forms using <form>, <input>, <textarea>, and <button>. Furthermore, I have acquired proficiency in using attributes like id, class, href, src, and alt to improve element identification, styling, and accessibility. I have also learned to integrate multimedia content with <img>, <audio>, and <video> tags, making my content more interactive and engaging. Lastly, I focus on following HTML best practices, such as regularly validating my code, to ensure compatibility with browsers and improve web accessibility. This contributes to an enhanced user experience and greater online visibility."   
         },
         {
             "name": "React",

@@ -1,3 +1,5 @@
+import { previewMenu } from "../../../index/app.js";
+
 const gridEffectChangeImage = async () => {
     const response = await fetch('/frontend/images.json')
     if (response.ok) {
@@ -67,9 +69,8 @@ const modalExpand = (buttonModalInfo, title, contextInfo, redirectHrefProjectGit
 
         
         modal.style.display = 'flex'; // Mostrar el modal al hacer clic en el botón
-        modal.classList.add('active');
-        console.log(modal)
-        console.log(content)
+        modal.classList.add('activee');
+    
         const elementTitle = document.createElement('h3');
         elementTitle.className = 'elementTitle'
         elementTitle.textContent = title; // Asignar el contenido del título al elemento h3
@@ -131,22 +132,7 @@ const elemntosNavLinkPojects = (content, redirectHrefProjectGitHub) => {
     content.appendChild(redirectCvReferece)
 
 }
-const buttonReferringProjects = (URL, id) => {
-    const buttonPagReferentProyect = document.getElementById(`${id}`);
-    buttonPagReferentProyect.classList.add("slide-down");
-    buttonPagReferentProyect.addEventListener('click', async () => {
-       
-
-        // Espera un tiempo para cargar la página
-        setTimeout(function () {
-            // Cambia la ubicación actual por la nueva página
-            window.location.href = URL;
-        }, 500); // Tiempo de duración de la animación (0.5 segundos en este caso)
-
-    });
-};
-
-buttonReferringProjects('http://127.0.0.1:5500/frontend/scripts/componenets/contacts/contacts.html', 'button-next-contacts');
-
 
 gridEffectChangeImage()
+const url = 'http://127.0.0.1:5500/frontend/scripts/componenets/grid-referring-projects/page-referring-projects.html'
+previewMenu(url, 'projectGrid')

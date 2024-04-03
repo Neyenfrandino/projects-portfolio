@@ -4,52 +4,48 @@
    
     <title>Document</title>
     <link rel="stylesheet" href="contacts.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-darka fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-dark slide-down" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                <!-- <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div> -->
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/frontend/index.html?#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:5500/frontend/scripts/componenets/contacts/contacts.html">Contacts</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/frontend/scripts/skills/skills.html">Skills</a></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5500/frontend/scripts/componenets/page-referring-projects/page-referring-projects.html">Projects</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit">Search</button>
-                    </form>
-                </div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-item">
+                <a href="http://127.0.0.1:5500/frontend/index/index.html"><i class="fas fa-home"></i></a> <!-- Icono de home -->
             </div>
+    
+            <div class="nav-item">
+                <a id="contact" href="http://127.0.0.1:5500/frontend/scripts/componenets/contacts/contacts.html"><i class="fas fa-comments"></i></a> <!-- Icono de contactos -->
+            </div>
+    
+            <div class="nav-item">
+                <a title="Projects" href="http://127.0.0.1:5500/frontend/scripts/componenets/grid-referring-projects/page-referring-projects.html"><i class="fas fa-code"></i></a> <!-- Icono de skills -->
+            </div>
+    
+            <div class="nav-item">
+                <a href="http://127.0.0.1:5500/frontend/scripts/skills/skills.html"><i class="fas fa-brain"></i></a> <!-- Icono de proyectos -->
+            </div>
+
+            <div class="nav-item">
+                <a href="http://127.0.0.1:5500/frontend/scripts/aboutMe/aboutMe.html"><i class="fas fa-user-astronaut" title="ACERCA DE MI "></i></a> <!-- Icono de proyectos -->
+            </div>
+            
+
+            <div class="nav-item">
+                <i class="fas fa-user-secret"></i> <!-- Icono de User Secret -->
+            </div>
+            
+<!--     
+            <div class="nav-item">
+               
+            </div>
+    
+            <div class="nav-item">
+               
+            </div> -->
         </div>
     </nav>
-
     
     <div class="container-contacts">
         <div class="container-img">
@@ -68,20 +64,15 @@
         </div>
 
         <div class="container-icon-contacts">
-            <a href="https://www.linkedin.com/in/neyen-frandino/"><i class="fab fa-linkedin hover-effect"></i></a>
-            <a href="https://github.com/Neyenfrandino"><i class="fab fa-github hover-effect"></i></a>
-            <a href="https://wa.me/+543534794179"><i class="fab fa-whatsapp hover-effect"></i></a>
-            <a href="tel:+573123510295"><i class="fas fa-phone-alt hover-effect"></i></a>
-            <a href="mailto:neyenfrandino1@gmail.com"><i class="far fa-envelope hover-effect"></i></a>
+            <a href="https://www.linkedin.com/in/neyen-frandino/" target="_blank"><i class="fab fa-linkedin hover-effect"></i></a>
+            <a href="https://github.com/Neyenfrandino" target="_blank"><i class="fab fa-github hover-effect"></i></a>
+            <a href="https://wa.me/+543534794179" target="_blank"><i class="fab fa-whatsapp hover-effect"></i></a>
+            <a href="tel:+573123510295" target="_blank"><i class="fas fa-phone-alt hover-effect"></i></a>
+            <a href="mailto:neyenfrandino1@gmail.com" target="_blank"><i class="far fa-envelope hover-effect"></i></a>
         </div>
         
     </div>
 
-    <footer class="container-logo-personal">
-        <img class="logo-img-personal" src="img/Logo Astrologia Tarot Minimalista Blanco y Negro.png" alt="">
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="contacts.js"></script>
 </body>
 </html>

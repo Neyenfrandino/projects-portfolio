@@ -1,0 +1,244 @@
+body {
+    background-image: url(../img/library-8604834_1280.jpg);
+    background-size: cover; /* Cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    font-family: "Edu NSW ACT Foundation", cursive !important;
+
+} 
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.container-presentation {
+    opacity: 0;
+    animation: fadeIn 0.9s forwards;
+    position: relative;
+    width: 100%; /* Ancho relativo al contenedor padre */
+    max-width: 600px; /* Ancho máximo para evitar que el contenido se vuelva demasiado ancho */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    padding: 20px; /* Espacio alrededor del contenido */
+    background-color: rgba(55, 58, 58, 0.5); /* Color de fondo con transparencia */
+    backdrop-filter: blur(50px); /* Desenfoque del fondo */
+    border-radius: 10px; /* Borde redondeado para el div */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos adicionales para hacer el texto centrado y legible */
+h1, p {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 23px;
+    color: rgba(0, 161, 167, 0.9);
+}
+
+
+.redirect-cv-referece {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect-cv-referece {
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre los elementos y el contenido anterior */
+    animation: slideInIcons 1s forwards; /* Animación de entrada */
+}
+
+.redirect-cv-referece a {
+    color: rgba(255, 255, 255, 0.7); /* Cambio de color al pasar el cursor */
+
+    margin: 10px;
+    font-size: 25px; /* Ajustar el tamaño de la fuente */
+    transition: color 0.3s, transform 0.3s; /* Transición suave de color y transformación */
+}
+
+.redirect-cv-referece a:hover {
+    color: rgba(0, 161, 167, 0.9);
+
+    transform: scale(1.2); /* Aumentar ligeramente el tamaño */
+}
+
+.buttonDownloadCv {
+    background-color: transparent;
+    border: none;
+    
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0px 0px; /* Ajusta el padding según sea necesario */
+   
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 50px; /* Tamaño de la fuente */
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 25px; /* Tamaño del icono */
+}
+
+.span {
+    font-size: 25px; /* Tamaño del texto */
+}
+
+
+
+@keyframes slideInIcons {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* .button-container {
+    position: fixed;
+    left: -100%; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    animation: slideInButton 2s forwards; 
+} */
+
+/* @keyframes slideInButton {
+    from {
+        left: -100%; 
+    }
+    to {
+        left: 92%; 
+    }
+} */
+
+
+.container-logo-personal {
+    position: fixed;
+    bottom: -40px;
+    left: 0;
+    padding: 20px;
+    padding-bottom: 0; /* Aumentar el espacio inferior */
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    z-index: 1000;
+}
+
+.logo-img-personal {
+    max-width: 200px;
+    height: auto;
+}
+
+
+nav {
+    position: fixed; /* Fijar la barra de navegación en la parte superior */
+    top: 0; /* Posicionar en la parte superior */
+    left: 50%; /* Alinear al centro horizontal */
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    width: 80%; /* Ancho del contenedor */
+    z-index: 1000; /* Capa z-index para estar sobre otros elementos */
+    display: flex; /* Utilizar flexbox para alinear los elementos */
+    justify-content: space-between; /* Alinear los elementos horizontalmente */
+}
+
+.nav-container {
+    display: flex; /* Utilizar flexbox para alinear los elementos */
+    background-color: rgba(55, 58, 58, 0.7);
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    width: 100%; /* Ancho completo */
+    margin-top: 10px; /* Margen superior */
+    justify-content: space-around;
+    align-items: center; /* Centrar verticalmente los elementos */
+    backdrop-filter: blur(10px); /* Aplicar un filtro de desenfoque al fondo */
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con navegadores webkit */
+    animation: slideDownb 1s forwards; /* Aplicar la animación al cargar */
+
+}
+
+.nav-item {
+    position: relative; /* Establecer posición relativa para los elementos de la barra de navegación */
+    display: inline-block; /* Hacer que los elementos sean en línea */
+    margin: 0  5px; /* Margen entre elementos */
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s; /* Agregar transición al movimiento y a la sombra */
+    cursor: pointer;
+
+}
+
+.active {
+    background-color: rgba(107, 124, 124, 0.9); /* Color de fondo */
+    color: #007bff; /* Color de texto */
+    border-radius: 20px; /* Borde redondeado */
+    padding: 5px 22px 1px 22px; /* Ajuste del tamaño */
+    animation: slide 0.5s forwards;
+};
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.nav-item:hover {
+    transform: scale(1.3); /* Aumentar el tamaño al hacer hover */
+    box-shadow: 0 0 9px rgba(13, 238, 254, 0.9); /* Agregar una sombra alrededor */
+    
+}
+
+
+
+.nav-item i {
+    color: rgba(255, 255, 255, 0.5) ;
+    font-size: 24px; /* Tamaño de los iconos */
+    transition: color 0.3s; /* Agregar transición al cambio de color */
+}
+
+.nav-item:hover i {
+    color:rgba(0, 161, 167, 0.9);
+}
+
+
+
+@keyframes slideDownb {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}@keyframes slideInn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
