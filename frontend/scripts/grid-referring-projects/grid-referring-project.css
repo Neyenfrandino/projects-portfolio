@@ -12,16 +12,6 @@
    
 }
 
-/* 
-@keyframes slideInGrid {
-    from {
-     
-    }
-    to {
-        transform: translateY(0); 
-    }
-} */
-
 @keyframes slideInGrid {
     from {
         transform: translateX(-100%); /* Empieza desde la izquierda de la ventana */

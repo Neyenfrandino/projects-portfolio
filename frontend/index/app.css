@@ -43,7 +43,8 @@ h1, p {
     margin: 0;
     padding: 10px;
     font-size: 23px;
-    color: rgba(0, 161, 167, 0.9);
+    color:rgba(255, 255, 255, 0.7);
+
 }
 
 
@@ -61,7 +62,7 @@ h1, p {
 }
 
 .redirect-cv-referece a {
-    color: rgba(255, 255, 255, 0.7); /* Cambio de color al pasar el cursor */
+    color: rgba(0, 161, 167, 0.9); /* Cambio de color al pasar el cursor */
 
     margin: 10px;
     font-size: 25px; /* Ajustar el tamaño de la fuente */
@@ -69,7 +70,7 @@ h1, p {
 }
 
 .redirect-cv-referece a:hover {
-    color: rgba(0, 161, 167, 0.9);
+    color:rgba(255, 255, 255, 0.7);
 
     transform: scale(1.2); /* Aumentar ligeramente el tamaño */
 }

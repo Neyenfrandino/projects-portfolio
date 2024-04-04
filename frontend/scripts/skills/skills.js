@@ -2,7 +2,7 @@ import { previewMenu } from "../../index/app.js";
 
 const gridSkills = async () => {
     const response = await fetch('/frontend/scripts/skills/skills.json');
-    const data = await response.json(); // Parseamos la respuesta a JSON
+    const data = await response.json(); 
 
     if (!data) {
         throw new Error("Failed to load JSON file data");

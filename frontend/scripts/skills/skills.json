@@ -14,7 +14,7 @@
         },
         {
             "name": "FastAPI",
-            "icono": "fa-network-wired",
+            "icono": "frontend/img/fastapi_logo_icon_248575.png",
             "image": "/frontend/img/UC-1129edb0-5996-4d5f-b281-c88b22ca246e.jpg",
             "courseContext": "SQLAlchemy with FastAPI, Using Alembic for database migrations, Creating models in Python, Building APIs, Generating JWT, Protecting APIs, Authentication, Testing, Deploying to Heroku, Creating databases in Heroku, Connecting FastAPI and Flask using Docker-compose, Docker in FastAPI."   
         },

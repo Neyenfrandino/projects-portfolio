@@ -1,5 +1,5 @@
 import { previewMenu } from "../../../frontend/index/app.js"
-//  console.log('hola')
+
 
 const gridEffectChangeImage = async () => {
 
@@ -7,21 +7,21 @@ const gridEffectChangeImage = async () => {
     const response = await fetch('/frontend/images.json')
     if (response.ok) {
         const data = await response.json();
-        console.log(data)
+        
         const querySelectorAllGrid = document.querySelectorAll('.container-grid-referring-project div')
-        let availableGrids = Array.from(querySelectorAllGrid); // Convertir NodeList a un array
+        let availableGrids = Array.from(querySelectorAllGrid); 
 
         data.forEach((elemet)  => {
             const { url, title, contextInfo, redirectHrefProjectGitHub } = elemet
-            // console.log(url)
-            if (availableGrids.length === 0) return; // Si no quedan contenedores disponibles, salir del bucle
+        
+            if (availableGrids.length === 0) return; 
 
             const randomIndex = Math.floor(Math.random() * availableGrids.length);
             const randomElement = availableGrids[randomIndex];
-            availableGrids.splice(randomIndex, 1); // Eliminar el contenedor seleccionado de la lista
+            availableGrids.splice(randomIndex, 1); 
 
             const elementImgGrid = document.createElement('img');
-            elementImgGrid.src = url; // Establecer el src de la imagen
+            elementImgGrid.src = url; 
             elementImgGrid.alt = "Random Image";
 
             const containerDivModalInfo = document.createElement('section');
@@ -49,12 +49,12 @@ const gridEffectChangeImage = async () => {
             i.addEventListener('mouseenter', () => {
 
                 i.style.transition = 'transform 0.5s';
-                i.style.transform = 'scale(1.3)'; // Aumenta el tamaño al 110%
-                i.style.zIndex = '1'; // Establece el z-index para colocar el elemento delante de los otros
+                i.style.transform = 'scale(1.3)'; 
+                i.style.zIndex = '1'; 
             })
             i.addEventListener('mouseleave', () => {
                 i.style.transition = 'transform 0.5s';
-                i.style.transform = 'scale(1)'; // Restaura el tamaño original
+                i.style.transform = 'scale(1)'; 
                 i.style.zIndex = '0'
             });
         }
@@ -72,33 +72,33 @@ const modalExpand = (buttonModalInfo, title, contextInfo, redirectHrefProjectGit
     buttonModalInfo.addEventListener('click', () => {
 
         
-        modal.style.display = 'flex'; // Mostrar el modal al hacer clic en el botón
+        modal.style.display = 'flex';
         modal.classList.add('activee');
     
         const elementTitle = document.createElement('h3');
         elementTitle.className = 'elementTitle'
-        elementTitle.textContent = title; // Asignar el contenido del título al elemento h3
+        elementTitle.textContent = title; 
 
         const elementSpan =  document.createElement('p')
         elementSpan.className = 'elementSpan'
         elementSpan.textContent = contextInfo
 
-        content.appendChild(elementTitle); // Agregar el elemento h3 al contenido del modal
+        content.appendChild(elementTitle); 
         content.appendChild(elementSpan)
 
         elemntosNavLinkPojects(content, redirectHrefProjectGitHub)
     });
 
-    // Función para cerrar el modal al hacer clic fuera de él
+
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
-            // Eliminar todos los elementos secundarios del modal
+            
             while (content.firstChild) {
                 content.removeChild(content.firstChild);
             }
 
             modal.classList.remove('active');
-            modal.style.display = 'none'; // Ocultar el modal al hacer clic fuera de él
+            modal.style.display = 'none'; 
         }
     });
 }
