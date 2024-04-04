@@ -1,9 +1,13 @@
-import { previewMenu } from "../../../index/app.js";
+import { previewMenu } from "../../../frontend/index/app.js"
+//  console.log('hola')
 
 const gridEffectChangeImage = async () => {
+
+
     const response = await fetch('/frontend/images.json')
     if (response.ok) {
         const data = await response.json();
+        console.log(data)
         const querySelectorAllGrid = document.querySelectorAll('.container-grid-referring-project div')
         let availableGrids = Array.from(querySelectorAllGrid); // Convertir NodeList a un array
 
@@ -134,5 +138,7 @@ const elemntosNavLinkPojects = (content, redirectHrefProjectGitHub) => {
 }
 
 gridEffectChangeImage()
-const url = 'http://127.0.0.1:5500/frontend/scripts/componenets/grid-referring-projects/page-referring-projects.html'
+
+const url = 'http://127.0.0.1:5500/frontend/scripts/grid-referring-projects/page-referring-projects.html'
+
 previewMenu(url, 'projectGrid')
